@@ -63,6 +63,7 @@ public class AuthActivity extends AppCompatActivity implements AuthContract.View
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
