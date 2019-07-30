@@ -39,6 +39,7 @@ public class AuthActivity extends AppCompatActivity implements AuthContract.View
             Log.d("LOGGERR", "authSuccess: " + prefConfig.getToken());
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
 
         binding.auth.setOnClickListener(new View.OnClickListener() {
