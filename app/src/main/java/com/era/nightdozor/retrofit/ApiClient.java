@@ -10,7 +10,7 @@ public class ApiClient {
     public static Retrofit getInstance() {
         if (ourInstance == null) {
             ourInstance = new Retrofit.Builder()
-                    .baseUrl("http://194.58.123.247:8080/dozor/")
+                    .baseUrl("https://nightdozor.ru/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
