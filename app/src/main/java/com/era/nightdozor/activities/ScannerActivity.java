@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -67,7 +68,9 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         if (
             ActivityCompat.checkSelfPermission(getApplicationContext(), CAMERA) != PERMISSION_GRANTED)
         {
-            requestPermissions(new String[]{CAMERA}, 8974);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{CAMERA}, 8974);
+            }
         } else {
             mScannerView.setResultHandler(this); // Register ourselves as a handler for scan results.
             mScannerView.startCamera();          // Start camera on resume
